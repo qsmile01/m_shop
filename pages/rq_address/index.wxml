@@ -1,0 +1,18 @@
+<view class="body">
+    <view class="space"></view>
+    <van-cell title="家" value="" icon="wap-home" label="{{home}}" 
+    bind:click="lookAddress" id="100"/>
+    <van-cell title="公司" value="" icon="manager" label="{{company}}"
+    bind:click="lookAddress" id="101"/>
+
+    <view class="space"></view>
+    <van-cell title="常用地址" value="管理" />
+    <van-cell title="成都市武侯区" value="" icon="location-o" label="国防家园"
+    bind:click="lookAddress"/>
+
+    <van-cell title="成都市武侯区" value="" icon="location-o" label="国防家园"
+    bind:click="lookAddress"/>
+
+    <van-cell title="成都市武侯区" value="" icon="location-o" label="国防家园"
+    bind:click="lookAddress"/>
+</view>

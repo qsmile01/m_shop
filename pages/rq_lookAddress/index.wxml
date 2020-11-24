@@ -1,0 +1,42 @@
+<!--搜索视图-->
+<view class="top_view">
+	<view class="top_lv">
+		<text>{{cityName}}</text>
+		<!-- <image class="city_img" src="../../images/address_city.png"></image> -->
+	</view>
+
+	<view class="top_lr"></view>
+
+	<view class="search">
+		<view class="search_v1">
+			<image class="search_icon" src="../../images/address_search.png"></image>
+		</view>
+		<view class="search_v2">
+				<input placeholder="请输入地址" value="{{searchContent}}" placeholder-style="color:#999999;" bindinput="inputEvent" bindfocus="focusEvent"></input>
+		</view>
+	</view>
+</view>
+
+<view class="space" style="background: {{spaceColor}};"></view>
+
+<!--内容视图-->
+<scroll-view scroll-y="true" class="content_view">
+	<block wx:for="{{items}}" wx:key="rqunner">
+		<view class="cell_view" data-item="{{item}}" data-index="{{index}}" bindtap="touchEvent">
+      <image src="../../images/address_icon.png"></image>
+
+      <view class="cell_v1">{{item.address}}</view>
+      <view class="cell_v2">{{item.detail}}</view>
+		</view>
+    <view class="line"></view>
+	</block>
+</scroll-view>
+
+<!-- toast 提示框 -->
+<include src="../tools/toast/toast.wxml" />
+
+<!-- progress 进度 -->
+<view class='load-progress {{loadProgress!=0?"show":"hide"}}' style="top:{{CustomBar}}px;">
+	<view class='load-progress-bar bg-purple' style="transform: translate3d(-{{100-loadProgress}}%, 0px, 0px);"></view>
+	<view class='load-progress-spinner ' style="color:#798AF8;"></view>
+</view>
